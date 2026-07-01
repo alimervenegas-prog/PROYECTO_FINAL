@@ -5,30 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitalis | Sistema de Gestión Clínica</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILOS DE EMERGENCIA: Si por alguna razón tu style.css tarda en cargar en GitHub, 
+           esto asegura que la estructura básica no se desarme por completo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a365d;
+            padding: 1rem 2rem;
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .module-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            display: block; /* Asegura que sean visibles inicialmente */
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+        .icon-box {
+            font-size: 2rem;
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        .btn-access {
+            color: #2b6cb0;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .user-chip {
+            background-color: #2b6cb0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        .btn-logout {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="background-overlay"></div>
 
     <nav class="navbar">
         <div class="logo">
-            <i class="fas fa-heartbeat"></i> <span>VITALIS</span>
+            <i class="fas fa-heartbeat"></i> <span style="font-weight: bold; margin-left: 5px;">VITALIS</span>
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">Inicio</a></li>
-            <li><div id="user-badge" class="user-chip">Cargando...</div></li>
+            <li><div id="user-badge" class="user-chip">Invitado</div></li>
             <li><button id="btn-logout" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Salir</button></li>
         </ul>
     </nav>
 
     <main class="container">
         <header class="hero">
-            <h1>Bienvenido al Sistema Médico</h1>
-            <p>Gestión integral de pacientes y atención clínica profesional.</p>
+            <h1 style="color: #1a365d; font-size: 2.5rem; margin-bottom: 0.5rem;">Bienvenido al Sistema Médico</h1>
+            <p style="color: #4a5568; font-size: 1.1rem;">Gestión integral de pacientes y atención clínica profesional.</p>
         </header>
 
         <section class="modules-grid" id="modules-grid">
-            <!-- Las tarjetas se muestran/ocultan según el rol con JS -->
             <a href="pacientes.html" class="module-card" data-modulo="pacientes">
                 <div class="icon-box"><i class="fas fa-user-injured"></i></div>
                 <h3>Pacientes</h3>
